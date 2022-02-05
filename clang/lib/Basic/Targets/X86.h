@@ -359,6 +359,7 @@ public:
     case CC_X86Pascal:
     case CC_IntelOclBicc:
     case CC_OpenCLKernel:
+    case CC_Stack:
       return CCCR_OK;
     case CC_SwiftAsync:
       return CCCR_Error;
@@ -730,6 +731,7 @@ public:
     case CC_PreserveAll:
     case CC_X86RegCall:
     case CC_OpenCLKernel:
+    case CC_Stack:
       return CCCR_OK;
     default:
       return CCCR_Warning;
@@ -807,6 +809,7 @@ public:
     case CC_SwiftAsync:
     case CC_X86RegCall:
     case CC_OpenCLKernel:
+    case CC_Stack:
       return CCCR_OK;
     default:
       return CCCR_Warning;

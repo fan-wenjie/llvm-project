@@ -2772,6 +2772,7 @@ void MicrosoftCXXNameMangler::mangleCallingConvention(CallingConv CC) {
       llvm_unreachable("Unsupported CC for mangling");
     case CC_Win64:
     case CC_X86_64SysV:
+    case CC_Stack:
     case CC_C: Out << 'A'; break;
     case CC_X86Pascal: Out << 'C'; break;
     case CC_X86ThisCall: Out << 'E'; break;

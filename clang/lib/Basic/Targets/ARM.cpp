@@ -1225,6 +1225,7 @@ ARMTargetInfo::checkCallingConvention(CallingConv CC) const {
   case CC_Swift:
   case CC_SwiftAsync:
   case CC_OpenCLKernel:
+  case CC_Stack:
     return CCCR_OK;
   default:
     return CCCR_Warning;
@@ -1304,6 +1305,7 @@ WindowsARMTargetInfo::checkCallingConvention(CallingConv CC) const {
   case CC_PreserveAll:
   case CC_Swift:
   case CC_SwiftAsync:
+  case CC_Stack:
     return CCCR_OK;
   default:
     return CCCR_Warning;

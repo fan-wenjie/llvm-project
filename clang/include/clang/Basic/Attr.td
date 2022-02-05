@@ -1579,6 +1579,11 @@ def MSABI : DeclOrTypeAttr {
   let Documentation = [MSABIDocs];
 }
 
+def StackCall : DeclOrTypeAttr {
+  let Spellings = [GCC<"stackcall">];
+  let Documentation = [Undocumented];
+}
+
 def MSP430Interrupt : InheritableAttr, TargetSpecificAttr<TargetMSP430> {
   // NOTE: If you add any additional spellings, ARMInterrupt's, M68kInterrupt's,
   // MipsInterrupt's and AnyX86Interrupt's spellings must match.

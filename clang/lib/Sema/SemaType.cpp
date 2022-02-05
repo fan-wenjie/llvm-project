@@ -123,6 +123,7 @@ static void diagnoseBadTypeAttribute(Sema &S, const ParsedAttr &attr,
   case ParsedAttr::AT_AArch64VectorPcs:                                        \
   case ParsedAttr::AT_MSABI:                                                   \
   case ParsedAttr::AT_SysVABI:                                                 \
+  case ParsedAttr::AT_StackCall:                                               \
   case ParsedAttr::AT_Pcs:                                                     \
   case ParsedAttr::AT_IntelOclBicc:                                            \
   case ParsedAttr::AT_PreserveMost:                                            \
@@ -7459,6 +7460,8 @@ static Attr *getCCTypeAttr(ASTContext &Ctx, ParsedAttr &Attr) {
     return createSimpleAttr<MSABIAttr>(Ctx, Attr);
   case ParsedAttr::AT_SysVABI:
     return createSimpleAttr<SysVABIAttr>(Ctx, Attr);
+  case ParsedAttr::AT_StackCall:
+    return createSimpleAttr<StackCallAttr>(Ctx, Attr);
   case ParsedAttr::AT_PreserveMost:
     return createSimpleAttr<PreserveMostAttr>(Ctx, Attr);
   case ParsedAttr::AT_PreserveAll:

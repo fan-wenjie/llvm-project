@@ -96,6 +96,7 @@ public:
       return CCCR_Warning;
     case CC_C:
     case CC_OpenCLKernel:
+    case CC_Stack:
       return CCCR_OK;
     }
   }

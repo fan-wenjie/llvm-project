@@ -67,6 +67,7 @@ unsigned CodeGenTypes::ClangCallConvToLLVMCallConv(CallingConv CC) {
   case CC_PreserveAll: return llvm::CallingConv::PreserveAll;
   case CC_Swift: return llvm::CallingConv::Swift;
   case CC_SwiftAsync: return llvm::CallingConv::SwiftTail;
+  case CC_Stack: return llvm::CallingConv::Stack;
   }
 }
 
@@ -241,6 +242,9 @@ static CallingConv getCallingConventionForDecl(const ObjCMethodDecl *D,
 
   if (D->hasAttr<PreserveAllAttr>())
     return CC_PreserveAll;
+
+  if (D->hasAttr<StackCallAttr>())
+    return CC_Stack;
 
   return CC_C;
 }

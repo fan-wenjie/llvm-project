@@ -3429,6 +3429,7 @@ enum CXCallingConv {
   CXCallingConv_AArch64VectorCall = 16,
   CXCallingConv_SwiftAsync = 17,
 
+  CXCallingConv_Stack = 18,
   CXCallingConv_Invalid = 100,
   CXCallingConv_Unexposed = 200
 };
