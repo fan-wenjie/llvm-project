@@ -346,6 +346,7 @@ added in the future:
     accessed runtime components pinned to specific hardware registers.
     At the moment only X86 supports this convention (both 32 and 64
     bit).
+"``stackcc``" - Stack Only calling convention without Register
 "``webkit_jscc``" - WebKit's JavaScript calling convention
     This calling convention has been implemented for `WebKit FTL JIT
     <https://trac.webkit.org/wiki/FTLJIT>`_. It passes arguments on the

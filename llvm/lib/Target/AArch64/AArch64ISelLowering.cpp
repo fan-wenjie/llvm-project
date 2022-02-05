@@ -5354,6 +5354,8 @@ CCAssignFn *AArch64TargetLowering::CCAssignFnForCall(CallingConv::ID CC,
    case CallingConv::AArch64_VectorCall:
    case CallingConv::AArch64_SVE_VectorCall:
      return CC_AArch64_AAPCS;
+   case CallingConv::Stack:
+     return CC_Stack;
   }
 }
 

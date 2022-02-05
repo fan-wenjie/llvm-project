@@ -1114,6 +1114,7 @@ def CC_X86_64 : CallingConv<[
 // This is the argument convention used for the entire X86 backend.
 let Entry = 1 in
 def CC_X86 : CallingConv<[
+  CCIfCC<"CallingConv::Stack", CCCustom<"!CC_Stack">>,
   CCIfCC<"CallingConv::Intel_OCL_BI", CCDelegateTo<CC_Intel_OCL_BI>>,
   CCIfSubtarget<"is64Bit()", CCDelegateTo<CC_X86_64>>,
   CCDelegateTo<CC_X86_32>

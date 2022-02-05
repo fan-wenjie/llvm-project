@@ -563,6 +563,10 @@ private:
   void MarkUnallocated(MCPhysReg Reg);
 };
 
+bool CC_Stack(unsigned ValNo, MVT ValVT, MVT LocVT,
+                      CCValAssign::LocInfo LocInfo, ISD::ArgFlagsTy ArgFlags,
+                   CCState &State);
+
 } // end namespace llvm
 
 #endif // LLVM_CODEGEN_CALLINGCONVLOWER_H

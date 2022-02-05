@@ -2077,6 +2077,8 @@ ARMTargetLowering::getEffectiveCallingConv(CallingConv::ID CC,
       return CallingConv::ARM_AAPCS_VFP;
     else
       return CallingConv::ARM_AAPCS;
+  case CallingConv::Stack:
+      return CallingConv::Stack;
   }
 }
 
@@ -2112,6 +2114,8 @@ CCAssignFn *ARMTargetLowering::CCAssignFnForNode(CallingConv::ID CC,
     return (Return ? RetCC_ARM_AAPCS : CC_ARM_AAPCS);
   case CallingConv::CFGuard_Check:
     return (Return ? RetCC_ARM_AAPCS : CC_ARM_Win32_CFGuard_Check);
+  case CallingConv::Stack:
+    return (Return ? RetCC_ARM_APCS : CC_Stack);
   }
 }
 

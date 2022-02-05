@@ -803,6 +803,7 @@ function. The operand fields are:
   * ``arm_apcscc``: code 66
   * ``arm_aapcscc``: code 67
   * ``arm_aapcs_vfpcc``: code 68
+  * ``stackcc``: code 102
 
 * isproto*: Non-zero if this entry represents a declaration rather than a
   definition

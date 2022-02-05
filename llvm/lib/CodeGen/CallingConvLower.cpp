@@ -294,3 +294,15 @@ bool CCState::resultsCompatible(CallingConv::ID CalleeCC,
   }
   return true;
 }
+
+bool llvm::CC_Stack(unsigned ValNo, MVT ValVT, MVT LocVT,
+                      CCValAssign::LocInfo LocInfo, ISD::ArgFlagsTy ArgFlags,
+                      CCState &State)
+{
+   const DataLayout& layout = State.getMachineFunction().getDataLayout();
+   llvm::Type* type = EVT(LocVT).getTypeForEVT(State.getContext());
+   unsigned size = layout.getTypeAllocSize(type);
+   unsigned Offset = State.AllocateStack(size, Align(size));
+   State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset, LocVT, LocInfo));
+   return false;
+}
